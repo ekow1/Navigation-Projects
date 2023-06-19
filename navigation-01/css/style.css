@@ -1,0 +1,167 @@
+.nav-wrapper{
+    position: fixed;
+    padding: 16px 32px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: 1px solid black;
+   
+}
+
+ .logo{
+        font-size: 1.5rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+    }
+
+.enu{
+    background-color: black;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    color: white;
+}
+
+
+.nav{
+    max-width: 1028px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* mobile menu */
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap: 30px;
+    position: absolute;
+    background-color: white;
+    padding: 30px 20px;
+    top: 60px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    list-style: none;
+    opacity: 0;
+    transition: all 0.3s;
+    
+}
+
+.menu a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu a:hover{
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    transition: all .5s;
+    font-weight: 300;
+}
+
+/* mobile menu hide */
+.menu.active-menu{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* humburger menu design */
+
+.humburger{
+    display: block;
+    position: relative;
+    user-select: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.humburger span{
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: black;
+    border-radius: 6px;
+    transform-origin: 0 0;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.humburger:hover span:nth-child(2){
+    transform: translateX(10px);
+}
+
+.humburger.is-active span:nth-child(1){
+    transform: translate(0 ,-2px) rotate(45deg);
+}
+.humburger.is-active span:nth-child(2){
+    opacity: 0;
+    transform: translate(15px);
+}
+.humburger.is-active span:nth-child(3){
+    transform: translate(-3px ,3px) rotate(-45deg);
+}
+
+
+@media (min-width: 768px){
+    .humburger{
+        display: none;
+    }
+
+    .menu {
+        opacity: 1;
+        position: relative;
+        flex-direction: row;
+        gap: 50px;
+        height: 80px;
+        top: 0;
+    }
+
+    .menu a {
+        font-weight: 400;
+    }
+    
+    .nav-wrapper{
+        padding: 10px 20px;
+    }
+
+    .nav{
+        max-width: 60%;
+        justify-content: space-around;
+        gap: 100px;
+        
+    }
+    .logo{
+        font-size: 2rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    .enu{
+    background-color: black;
+    padding: 15px;
+    font-weight: bolder;
+    font-size: larger;
+    color: white;
+}
+
+    
+}
